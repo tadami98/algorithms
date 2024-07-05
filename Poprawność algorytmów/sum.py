@@ -5,7 +5,7 @@
 
 # Specification:
     Name and arguments: 
-        calculate_sum(sequence, length)
+        sum(sequence, length)
 
     Initial condition: 
         sequence - an iterable of integers
@@ -34,7 +34,7 @@
 
 from typing import Iterable
 
-def calculate_sum(sequence: Iterable[int], length: int) -> int:
+def sum(sequence: Iterable[int], length: int) -> int:
     """
     Calculates the sum of the first 'length' elements in 'sequence'.
     
@@ -59,9 +59,9 @@ def main() -> None:
     array2: tuple[int] = (4, 5, 6)
     array3: set[int] = {7, 8, 9}
     
-    print(calculate_sum(array1, len(array1)))
-    print(calculate_sum(array2, 2))
-    print(calculate_sum(array3, len(array3)))
+    print(sum(array1, len(array1)))
+    print(sum(array2, 2))
+    print(sum(array3, len(array3)))
 
 if __name__ == "__main__":
     main()
