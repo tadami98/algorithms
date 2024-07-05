@@ -15,6 +15,13 @@ Specification:
         The algorithm should return an integer
         that is the sum of the first length elements of this sequence,
         or zero if the sequence is empty.
+
+
+    Poprawność algorytmu:
+        Własność stopu:
+            - algorytm zatrzyma się, kiedykolwiek zajdzie i >= len
+            - len jest stałą i skończoną liczbą naturalną
+            - wartość zmiennej i rośnie o 1 w każdej iteracji
 """
 
 from typing import Iterable
