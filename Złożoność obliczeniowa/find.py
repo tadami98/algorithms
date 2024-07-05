@@ -16,6 +16,20 @@ Specification:
         which is the index where the key first appears in the array 'arr' up to index 'len'.
         If the key is not found among the first 'len' elements, it should return -1.
 
+# Algorithm correctness:
+    Termination property:
+        - the algorithm will terminate whenever i >= len
+        - len is a constant and finite natural number
+        - the variable i increments by 1 in each iteration
+
+    Partial correctness:
+        - Invariant: if the key is found at index i, then i < length.
+        - If the key is not found by the end of the loop, the function returns -1.
+        - The invariant is also true just before the first iteration of the loop 
+          so it will be true after any number of iterations.
+
+# TODO: Time complexity: 
+
 """
 
 def find(arr: list[int], len: int, key: int) -> int:
