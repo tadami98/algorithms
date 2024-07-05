@@ -1,9 +1,9 @@
 """
-Task:
+# Task:
     Return the sum of numbers in the given sequence 
     up to the specified length.
 
-Specification:
+# Specification:
     Name and arguments: 
         calculate_sum(sequence, length)
 
@@ -17,11 +17,19 @@ Specification:
         or zero if the sequence is empty.
 
 
-    Poprawność algorytmu:
-        Własność stopu:
-            - algorytm zatrzyma się, kiedykolwiek zajdzie i >= len
-            - len jest stałą i skończoną liczbą naturalną
-            - wartość zmiennej i rośnie o 1 w każdej iteracji
+# Algorithm correctness:
+    Termination property:
+        - the algorithm will terminate whenever i >= len
+        - len is a constant and finite natural number
+        - the variable i increments by 1 in each iteration
+
+    Partial correctness:
+        - invariant: (∀0≤j<i x ≥ Arr[j]) ∧ (∃0≤j<len(x == Arr[j]))
+        - if it was true in iteration i 
+          it will be true after iteration i 
+          due to the conditional update of variable x in the 'if' statement
+        - the invariant is also true just before the first iteration of the loop 
+          so it will be true after any number of iterations.    
 """
 
 from typing import Iterable
