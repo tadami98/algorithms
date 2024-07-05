@@ -18,20 +18,31 @@ Specification:
 
 """
 
-def find(arr: list[int], length: int, key: int) -> int:
+def find(arr: list[int], len: int, key: int) -> int:
     """
-    Finds the index of the specified key in the array up to the given length.
+    Finds the index of the specified key in the array up to the given len.
     
     Returns:
         The index of the specified key in the array 'arr' up to index 'len'.
         If the key is not found among the first 'len' elements, return -1.
     """
-    for i in range(length):
+    while i < len:
         if arr[i] == key:
             return i
+        i += 1
     return -1
+
 def main() -> None:
-    pass
+    arr: list[int] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    len = len(arr)
+    key: int = 8
+
+    key_index: int = find(arr, len, key)
+
+    if key_index == -1:
+        print(f"The key {key} not found in the array.")
+    else:
+        print(f"The key {key} found at index {key_index}.")
 
 if __name__ == '__main__':
     main()
