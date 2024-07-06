@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "algorithms"
+version = "0.1.0"
+description = "Algorithms and data structures"
+authors = ["tadami <maciej98t@gmail.com>"]
+readme = "README.md"
+packages = [
+    { include = "algorithm-correctness"},
+    { include = "time-space-complexity"}
+]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
