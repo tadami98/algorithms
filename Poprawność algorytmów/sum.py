@@ -1,42 +1,47 @@
-from typing import Iterable
+""" Specification and algorithm correctness proof.
+# Specification:
+
+    Name and arguments: sum(array, len)
+
+    Initial condition: 
+        array - an array of integers.
+        len - a natural number representing the declared len of the array.
+
+    Final condition: 
+        The algorithm should return an integer
+        that is the sum of the first len elements of this array,
+        or zero if the array is empty.
+
+
+# Algorithm correctness:
+
+    Termination property:
+        - The algorithm will terminate whenever i >= len.
+        - len is a constant and finite natural number.
+        - The variable i increments by 1 in each iteration.
+
+    Partial correctness:
+        - Invariant: (∀0≤j<i x ≥ Arr[j]) ∧ (∃0≤j<len(x == Arr[j]))
+        - If it was true in iteration i 
+          it will be true after iteration i 
+          due to the conditional update of variable x in the 'if' statement
+        - The invariant is also true just before the first iteration of the loop 
+          so it will be true after any number of iterations.
+"""
 
 def sum(array: list[int], len: int) -> int:
     """
-    Task:
-        Return the sum of numbers in the given array 
-        up to the specified len.
+    Return the sum of numbers in the given array.
 
-    Specification:
-        Name and arguments: 
-            sum(array, len)
+    Args:
+        array (list[int]): array of integers.
+        len (int): a natural number representing the declared len of the array.
 
-        Initial condition: 
-            array - an array of integers
-            len - a natural number representing the declared len of the array
-
-        Final condition: 
-            The algorithm should return an integer
-            that is the sum of the first len elements of this array,
-            or zero if the array is empty.
-
-    Algorithm correctness:
-        Termination property:
-            - The algorithm will terminate whenever i >= len.
-            - len is a constant and finite natural number.
-            - The variable i increments by 1 in each iteration.
-
-        Partial correctness:
-            - Invariant: the sum variable correctly accumulates the sum of the elements 
-              in the array up to the current index.
-            - If it was true in iteration i, it will be true after iteration i due to 
-              the unconditional update of the sum variable.
-            - The invariant is also true just before the first iteration of the loop 
-              so it will be true after any number of iterations.
-    
     Returns:
-        The sum of the first 'len' elements of 'array'.
+        The sum of the elements of 'array'.
         If 'array' is empty or 'len' is 0, returns 0.
     """
+    
     sum: int = 0
     i: int = 0
 
